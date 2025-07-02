@@ -69,9 +69,10 @@ const TransactionForm = () => {
 
     const groupedTransactions = []
     for (let index = 0; index < transactions.length; index += 2) {
-        const first = transactions[index]
-        const second = transactions[index + 1]
+        const first = [...transactions[index], index]
+        let second = transactions[index + 1]
         if (second) {
+            second = [...second, index + 1]
             groupedTransactions.push([first, second])
         } else {
             groupedTransactions.push([first])
@@ -84,8 +85,8 @@ const TransactionForm = () => {
 
             <form onSubmit={handleSubmit}>
                 {groupedTransactions.map((transactions, index) => (
-                    <div className='transaction-row-2x'>
-                        {transactions.map(([cost, cashback], index) => (
+                    <div className='transaction-row-2x' key={index}>
+                        {transactions.map(([cost, cashback, index]) => (
                             <div className='transaction-item'>
                                 <div className={`transaction-row ${index % 2 === 1 ? 'transaction-row-right' : ''}`} key={index}>
                                     <label>
