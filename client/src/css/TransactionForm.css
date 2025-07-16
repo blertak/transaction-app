@@ -14,10 +14,25 @@
   color: #333;
 }
 
+.transaction-row-2x {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.transaction-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
 .transaction-row {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.transaction-row-right {
+  justify-content: end;
 }
 
 .transaction-row label {
@@ -31,7 +46,7 @@
   padding: 6px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100px;
+  width: 80px;
 }
 
 .algorithm-selector {
