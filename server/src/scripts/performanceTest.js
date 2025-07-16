@@ -1,3 +1,5 @@
+const { bruteForceMinimumMoney, naiveMinimumMoney, optimizedMinimumMoney } = require('../core/transactionEngine')
+
 console.time("Brute Force Execution Time");
 console.log("Shuma minimale fillestare (brute force):", bruteForceMinimumMoney([
     [845, 883], [574, 930], [955, 279], [180, 909], [427, 863],
